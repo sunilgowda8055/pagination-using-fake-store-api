@@ -50,7 +50,7 @@ function createProductCard(product) {
   viewDetailsButton.textContent = 'View Details'
   viewDetailsButton.addEventListener('click', () => {
     // Redirect to details page with product ID
-    window.location.href = `details.html?id=${product.id}`
+    window.location.href = `viewDetails.html?id=${product.id}`
   })
 
   card.appendChild(title)
@@ -64,5 +64,7 @@ function createProductCard(product) {
 
 
 
-
+function logOut(){
+window.location.href='./login.html'
+}
 

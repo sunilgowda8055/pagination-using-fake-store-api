@@ -20,34 +20,15 @@ body {
   width: 300px;
 }
 
-/* .product-image {
-  max-width: 250px;
-  max-height: 250px;
-  display: flex;
-  justify-content: center;
-  border-radius: 8px;
-  box-shadow:   8px 8px 10px rgba(1, 1, 1, 0.1);
-  margin: 20px;
-  padding: 20px;
-  background-color: hwb(0 100% 0%);
 
-  object-fit: cover;
-
-  overflow: hidden;
-  display: block;
-} */
 
 .product-image  {
   width: 100%;
   height: auto;
   max-height: 150px;
-  
+
 }
 
-/* .content-container {
-  margin-top: 10px;
-  margin-bottom: 10px;
-} */
 
 h3 {
   font-size: 1.2em;

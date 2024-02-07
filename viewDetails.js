@@ -66,3 +66,12 @@ function createProductCard(product) {
 
     return card;
 }
+
+
+function logout(){
+
+    localStorage.removeItem('token');
+
+
+    window.location.href='./login.html'
+}
