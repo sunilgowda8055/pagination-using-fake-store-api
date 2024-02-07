@@ -25,8 +25,8 @@ async function register() {
     const data = await response1.json()
     console.log('data in register page', data)
 
-    // if(data){
-    //   // window.location.href='login.html'
-    // }
+    if(data){
+      window.location.href='login.html'
+    }
   } catch (error) {}
 }

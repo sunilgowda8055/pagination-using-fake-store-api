@@ -4,6 +4,10 @@ async function fetchProductDetails() {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
 
+        if (!productId) {
+            throw new Error('Product ID not found in URL');
+        }
+
         // Fetch data for the specific product
         const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
 
@@ -11,10 +15,15 @@ async function fetchProductDetails() {
             throw new Error('Network response was not ok');
         }
 
-        const data = await response.json();
-        renderProductDetails(data);
+        const product = await response.json();
+
+        if (!product) {
+            throw new Error('Product data not found');
+        }
+
+        renderProductDetails(product);
     } catch (error) {
-        console.error('Error fetching product details:', error);
+        console.error('Error fetching or rendering product details:', error);
     }
 }
 
@@ -22,6 +31,11 @@ fetchProductDetails();
 
 function renderProductDetails(product) {
     const productDetailsContainer = document.getElementById('product-details');
+
+    if (!productDetailsContainer) {
+        console.error('Product details container not found');
+        return;
+    }
 
     const card = createProductCard(product);
     productDetailsContainer.appendChild(card);

@@ -4,7 +4,7 @@
 
 
 async function login() {
-  // window.location.href='index.html'
+  window.location.href='main.html'
   const emailValue = document.getElementById('username').value
   const passWordValue = document.getElementById('password').value
 
@@ -24,7 +24,7 @@ async function login() {
     localStorage.setItem('token', userData.data.data.token)
 
     if (localStorage.getItem('token')) {
-      window.location.href = './index.html'
+      window.location.href = './main.html'
     }
   } catch (error) {
     console.log('Something Went Wrong')
